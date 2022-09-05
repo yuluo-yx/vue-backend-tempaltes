@@ -1,0 +1,13 @@
+html.dark {
+    /* 覆盖element-plus默认深色背景色 */
+    --el-bg-color: #121327;
+
+    .el-button--primary {
+        --el-button-text-color: #140505;
+    }
+
+    img,
+    .dark-img-bg {
+        filter: brightness(0.8) saturate(1.25)
+    }
+}
