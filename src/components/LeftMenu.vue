@@ -33,7 +33,7 @@
       :key="value.path"
     >
       <!-- 带下拉的导航 -->
-      <el-sub-menu :index="value.path" v-if="value.children">
+      <el-sub-menu :index="value.path" v-show="value.meta.isShow == true" v-if="value.children">
         <template #title>
           <el-icon>
             <!-- 可以放入路由信息中 -->
@@ -44,16 +44,16 @@
           <span>{{ value.meta.title }}</span>
         </template>
         <el-menu-item-group v-for="val in value.children" :key="val.path">
-          <el-menu-item :index="val.path">{{ val.meta.title }}</el-menu-item>
+          <el-menu-item v-show="value.meta.isShow == true" :index="val.path">{{ val.meta.title }}</el-menu-item>
         </el-menu-item-group>
       </el-sub-menu>
 
       <!-- 不带下拉的导航 -->
-      <el-menu-item :index="value.path" v-else>
+      <el-menu-item v-show="value.meta.isShow == true" :index="value.path" v-else>
         <el-icon style="color: rgb(141, 157, 186)">
           <component :is="value.meta.icon"></component>
         </el-icon>
-        <span>{{ value.meta.title }}</span>
+        <span v-show="value.meta.isShow == true">{{ value.meta.title }}</span>
       </el-menu-item>
     </template>
   </el-menu>
@@ -107,6 +107,8 @@ onMounted(() => {
   // 动态获取路由规则
   // console.log(router.options.routes[1].children)
 });
+
+const show = ref<Boolean>(true)
 </script>
 
 <style lang="scss">

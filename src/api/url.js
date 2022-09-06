@@ -4,6 +4,7 @@ let apiUrl = {
     // 后台系统用户登录
     login: "/user/login",
     logout: "/user/logout",
+    updateUser: "/user/update",
 
     // xoj用户部分
     getAllXOJUser: "/xoj/user/getAll",

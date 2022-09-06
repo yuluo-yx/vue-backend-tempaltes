@@ -10,6 +10,7 @@ import {
 } from '@element-plus/icons-vue'
 
 const routes: Array<RouteRecordRaw> = [
+
   {
     path: '/login',
     name: 'login',
@@ -28,7 +29,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../views/home/Index/Index.vue'),
         meta: {
           title: "首页",
-          icon: HomeFilled
+          icon: HomeFilled,
+          isShow: true
         }
       },
       {
@@ -37,7 +39,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../views/home/user/List.vue'),
         meta: {
           title: "用户管理",
-          icon: Avatar
+          icon: Avatar,
+          isShow: true
         }
       },
       {
@@ -46,7 +49,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../views/home/discussion/List.vue'),
         meta: {
           title: "讨论管理",
-          icon: Management
+          icon: Management,
+          isShow: true
         }
       },
       {
@@ -55,7 +59,18 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../views/home/sys/EchartsViews.vue'),
         meta: {
           title: "服务器",
-          icon: Platform
+          icon: Platform,
+          isShow: true
+        }
+      },
+      {
+        path: '/sysuser',
+        name: 'sysuser',
+        component: () => import('../views/sys/SysUser.vue'),
+        meta: {
+          title: "",
+          icon: "",
+          isShow: false
         }
       },
       {
@@ -64,11 +79,14 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../views/home/judge-serve/List.vue'),
         meta: {
           title: "判题机",
-          icon: Document
+          icon: Document,
+          isShow: true
         }
-      }
+      },
+      
     ]
   },
+  
 
   // 设置重定向
   // 暂时将首页设置成home，方便开发

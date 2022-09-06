@@ -9,3 +9,10 @@ export function CkPassword(data) {
     let reg = /^(?!\D+$)(?![^a-zA-Z]+$)\S{6,15}$/;
     return !reg.test(data) ? true : false
 }
+
+export function CkEmail(data) {
+    // 使用正则进行验证
+    let reg = /^[a-zA-Z0-9]+([-_.][a-zA-Z0-9]+)*@[a-zA-Z0-9]+([-_.][a-zA-Z0-9]+)*\.[a-z]{2,}$/
+
+    return !reg.test(data) ? true : false
+}
